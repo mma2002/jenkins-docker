@@ -20,7 +20,7 @@ pipeline {
 
         stage ('Build docker image') {
             steps {
-                sh 'docker build -t jenkins-docker:0.0.1'
+                sh 'docker build -t jenkins-docker .'
             }
         }
     }

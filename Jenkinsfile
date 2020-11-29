@@ -18,6 +18,14 @@ pipeline {
             }
         }
 
+        stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'maven_3_6_3') {
+                    sh 'mvn install'
+                }
+            }
+        }
+
         stage ('Build docker image') {
             steps {
                 sh 'docker build -t jenkins-docker .'
